@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proyecto 2023S1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link href="style.css" rel="stylesheet">
+<link rel="icon" href="img/logo.png">
+<script src="main.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="modal fade" id="ingresoMontoModal" tabindex="-1" aria-labelledby="ingresoMontoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ingresoMontoModalLabel">Ingrese el Monto</h5>
+        </div>
+        <div class="modal-body">
+          <form id="montoForm">
+            <div class="mb-3">
+              <label for="montoInput" class="form-label">Monto</label>
+              <input type="number" class="form-control" id="montoInput" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="guardarMontoBtn">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+    <div class="bg-dark p-4">
+      <h5 class="text-body-emphasis h4">Proyecto FIS</h5>
+      <nav>
+        <a id="idHome" href="">Home</a>
+        <br>
+      </nav>
+    </div>
+  </div>
+  
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <img src="img/logo.png" id="logo" alt="imagen de logo de la marca">
+      <label class="monto" for="monto">Monto
+        <input type="number" id="monto" readonly style="width:20%">
+      </label>
+    </div>
+  </nav>
+
+  <section class="apuestas" id="idapuestas">
+      <section class="verApuestas">
+        <article class="apuesta1">
+          <header class="seccionPartido1">
+            <h5 id="fecha" class="fecha1">Fecha</h5>
+            <h6 id="equipo1" class="equipo1Partido1">Equipo1</h6>
+            <!-- <p class="score1Partido1" id = "score">0</p>
+            <h6 id="goles" class="golesPartido1">Goles</h6>  -->
+            <h6 id="equipo2" class="equipo2Partido1">Equipo2</h6>
+            <!-- <p class="score2Partido1" id = "score"> 0</p> -->
+          </header>
+          <footer class="ganancias">
+            
+              <p id = "pagos">Local: <br><span id="ganancia1LabelPartido1"></span></p>
+      
+              <p id = "pagos">Empate: <br><span id="gananciaLabelEmpatePartido1"></span></p>
+      
+              <p id = "pagos">Visitante: <br><span id="ganancia2LabelPartido1"></span></p>
+            <button class="botonIrApuesta" id = "botonApuesta1">Apostar</button>
+          </footer>
+        </article>
+      
+        <article class="apuesta2">
+          <header class="seccionPartido1">
+            <h5 id="fecha" class="fecha2">Fecha</h5>
+            <h6 id="equipo1" class="equipo1Partido2">Equipo1</h6>
+            <!-- <p class="score1Partido2" id = "score">0</p>
+            <h6 id="goles" class="golesPartido2">Goles</h6>
+            <p class="score2Partido2" id = "score">0</p> -->
+            <h6 id="equipo2" class="equipo2Partido2">Equipo2</h6>
+          </header>
+          <footer class="ganancias">
+            <p id = "pagos">Local: <br><span id="ganancia1LabelPartido2"></span></p>
+      
+              <p id = "pagos">Empate: <br><span id="gananciaLabelEmpatePartido2"></span></p>
+      
+              <p id = "pagos">Visitante: <br><span id="ganancia2LabelPartido2"></span></p>
+            <button class="botonIrApuesta"  id ="botonApuesta2">Apostar</button>
+          </footer>
+        </article>
+      
+        <article class="apuesta3">
+          <header class="seccionPartido1">
+            <h5 id="fecha" class="fecha3">Fecha</h5>
+            <h6 id="equipo1" class="equipo1Partido3">Equipo1</h6>
+            <!-- <p class="score1Partido3" id = "score">0</p>
+            <h6 id="goles" class="golesPartido3">Goles</h6>
+            <p class="score2Partido3" id = "score">0</p> -->
+            <h6 id="equipo2" class="equipo2Partido3">Equipo2</h6>
+          </header>
+          <footer class="ganancias">
+            <p id = "pagos">Local: <br><span id="ganancia1LabelPartido3"></span></p>
+      
+            <p id = "pagos">Empate: <br><span id="gananciaLabelEmpatePartido3"></span></p>
+    
+            <p id = "pagos">Visitante: <br><span id="ganancia2LabelPartido3"></span></p>
+
+            <button class="botonIrApuesta" id = "botonApuesta3">Apostar</button>
+          </footer>
+        </article>
+      </section>
+      <div class = "nuevaApuesta">  
+      </div>
+  </section>
+
+  <section class="seccionHistorial">
+    
+  </section>
+
+  <section class="seccionNoticias" id="seccionNoticias">
+    <article class="noticia" id = "noticia1">
+      <a href="https://elpais.com/deportes/baloncesto/2024-04-17/la-nba-sanciona-de-por-vida-al-jugador-jontay-porter-por-hacer-trampas-con-las-apuestas.html"
+        target="_blank" class ="contenidoNoticia">
+        <!-- id para los titulos -->
+        <h5 class = "titulo" id="linea">NBA sanciona de por vida al jugador Jontay Porter por hacer trampas con las
+          apuestas
+        </h5>
+        <!-- id para las descripciones de las noticias (usar el mismo id para otras noticias)-->
+        <p class = "desc" id="linea"> La liga ha compartido información con los fiscales federales por si emprenden
+          acciones por la vía penal
+        </p>
+      </a>
+    </article>
+
+    <article class = "noticia" id = "noticia2" >
+      <a href="https://www.elpais.com.uy/ovacion/futbol/tres-hinchas-del-valencia-fueron-conden"
+       target ="_blank" class= "contenidoNoticia">
+        <h5 class = "titulo" id="linea">Tres hinchas del Valencia fueron condenados a ocho meses de cárcel por insultos racistas a Vinícius Júnior
+        </h5>
+        <p class = "desc" id = "linea"> Tras la denuncia por lo ocurrido aquel 21 de mayo de 2023 durante el Valencia vs. Real Madrid, se les impuso esta pena a los parciales, que pidieron la suspensión de la pena de prisión y están a la espera de la confirmación de la jueza.
+        </p>
+      </a>
+    </article> 
+
+    <article class = "noticia" id = "noticia3" >
+      <a href="https://www.marca.com/natacion/waterpolo/2024/05/20/664b6edb22601db0218b45b1.html"
+       target ="_blank" class= "contenidoNoticia">
+        <h5 class = "titulo" id="linea">Comienzan las semifinales por los títulos de liga masculina y femenina
+        </h5>
+        <p class = "desc" id = "linea"> Se disputan a partir de este martes al mejor de tres partidos
+        </p>
+      </a>
+    </article>
+
+    <article class = "noticia" id = "noticia4" >
+      <a href="https://www.lanacion.com.ar/deportes/es-como-una-droga-viaje-a-la-mente-de-un-tenista-tramposo-asi-funciona-el-perverso-sistema-para-nid11052024/"
+       target ="_blank" class= "contenidoNoticia">
+        <h5 class = "titulo" id="linea">“Es como una droga”Viaje a la mente de un tenista tramposo
+        </h5>
+        <p class = "desc" id = "linea"> así funciona el perverso sistema para arreglar partidos
+        </p>
+      </a>
+    </article>
+
+    <article class = "noticia" id = "noticia5" >
+      <a href="https://www.marca.com/futbol/real-madrid/2024/02/19/65d28546268e3ebb6e8b4575.html"
+       target ="_blank" class= "contenidoNoticia">
+        <h5 class = "titulo" id="linea">Mbappé ya ha firmado su contrato con el Real Madrid
+        </h5>
+        <p class = "desc" id = "linea"> El francés será jugador madridista y fichará por cinco temporadas
+        </p>
+      </a>
+    </article>
+  </section>
+  <section class="seccionMenu" id ="seccionMenu">
+    <div class="botonesMenu">
+      <h5 id="idMenu">Menu</h5>
+      <button id="btnApuestas" type="button" class="btn btn-warning">Apuestas</button>
+      <button id="btnHistorial" type="button" class="btn btn-warning">Historial</button>
+      <button id="btnNoticias" type="button" class="btn btn-warning">Noticias</button>
+    </div>
+  </section>
+</body>
+
+</html>
