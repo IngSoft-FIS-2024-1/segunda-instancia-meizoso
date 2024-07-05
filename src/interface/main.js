@@ -218,7 +218,7 @@ function crearApuesta(local, visitante, fecha) {
     monto.placeholder = "$0000";
 
     let pApuestaListado = document.createElement("label");
-    pApuestaListado.textContent = "coloque su apuesta:";
+    pApuestaListado.textContent = "Coloque su Apuesta:";
     pApuestaListado.classList.add("pApuestaListado");
     const unicoId = 'montoId';
     monto.id = unicoId;
@@ -285,11 +285,11 @@ function crearApuesta(local, visitante, fecha) {
     divApuesta.appendChild(divBoton3);
     let boton = document.createElement("input");
     boton.type = "button"
-    boton.value = "hecho"
+    boton.value = "Hecho"
     boton.classList.add("botonListado")
     let botonBorrar = document.createElement("input");
     botonBorrar.type = "button";
-    botonBorrar.value = "cerrar";
+    botonBorrar.value = "Cerrar";
     botonBorrar.classList.add("botonBorrar");
     divApuesta.appendChild(boton);
     divApuesta.appendChild(botonBorrar);
@@ -426,19 +426,19 @@ function crearApuesta(local, visitante, fecha) {
                 listaHistorial.id = "listaHistorial";
                 let tuApuesta = document.createElement("p");
                 tuApuesta.classList.add("tuApuesta");
-                tuApuesta.textContent = "apostaste: " + a.getEquipoSeleccionado();
+                tuApuesta.textContent = "Apostaste: " + a.getEquipoSeleccionado();
                 listaHistorial.appendChild(tuApuesta);
                 let aEquipo1 = document.createElement("p");
                 aEquipo1.classList.add("equipo1Historial");
                 aEquipo1.textContent = a.getPartido().getEquipo1();
                 let cantGoles1 = document.createElement("p");
-                cantGoles1.textContent = " goles:" + a.getPartido().getGolesEquipo1();
+                cantGoles1.textContent = " Goles:" + a.getPartido().getGolesEquipo1();
                 aEquipo1.appendChild(cantGoles1);
                 let aEquipo2 = document.createElement("p");
                 aEquipo2.textContent = a.getPartido().getEquipo2();
                 aEquipo2.classList.add("equipo2Historial");
                 let cantGoles2 = document.createElement("p");
-                cantGoles2.textContent = " goles:" + a.getPartido().getGolesEquipo2();
+                cantGoles2.textContent = " Goles:" + a.getPartido().getGolesEquipo2();
                 aEquipo2.appendChild(cantGoles2);
                 listaHistorial.appendChild(aEquipo1);
                 listaHistorial.appendChild(aEquipo2);
@@ -462,7 +462,7 @@ function crearApuesta(local, visitante, fecha) {
                   let btnBorrarLista = document.createElement("input");
                   btnBorrarLista.type = "button";
                   btnBorrarLista.classList.add("reclamarBtn");
-                  btnBorrarLista.value = "borrar";
+                  btnBorrarLista.value = "Borrar";
                   a.setPorcentaje(0);
                   btnBorrarLista.dataset.index = index;
                   mensajeResultado.appendChild(btnBorrarLista);
