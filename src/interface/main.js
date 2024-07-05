@@ -445,7 +445,7 @@ function crearApuesta(local, visitante, fecha) {
                 historial.appendChild(listaHistorial);
                 if (a.getEquipoGanador() == a.getEquipoSeleccionado()) {
                   let mensajeResultado = document.createElement("p");
-                  mensajeResultado.textContent = "Felicidades! Has ganado!!";
+                  mensajeResultado.textContent = "¡Felicidades, has ganado!";
                   mensajeResultado.classList.add("mensajeResultado");
                   let botonReclamar = document.createElement("input");
                   botonReclamar.type = "button";
@@ -457,7 +457,7 @@ function crearApuesta(local, visitante, fecha) {
                   apuestasGanadas.push(a);
                 } else {
                   let mensajeResultado = document.createElement("p");
-                  mensajeResultado.textContent = "perdiste! Mas suerte la proxima.";
+                  mensajeResultado.textContent = "¡Perdiste! Más suerte la próxima.";
                   mensajeResultado.classList.add("mensajeResultado");
                   let btnBorrarLista = document.createElement("input");
                   btnBorrarLista.type = "button";
