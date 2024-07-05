@@ -123,23 +123,6 @@ const elementosPartidos = [
     Visitante: document.querySelector("#ganancia2LabelPartido3"),
   }
 ];
-//agrega el monto que ingrese el usuario al 
-//input del monto para que pueda apostar
-function agregarMontoaInput(){
-  let monto = 50;
-  const inputMonto = document.getElementById("monto");
-  const montoModal = document.getElementById("montoInput").value;
-
-  if (montoModal <= 3){
-    alert("Ingresa un monto superior a 3 dolares");
-  }else if(montoModal > 200){
-    alert("Ingresa un monto inferior a 200 dolares");
-  }
-  else{
-    inputMonto.value = montoModal;
-    ocultarIngresoMonto();
-  }
-}
 
 //funcion para mostrar en las apuestas 3 partidos aleatoriamente 
 const partidosSeleccionados = [];
@@ -170,11 +153,6 @@ function partidos3AlInicio() {
       elemento.empate.textContent = partido.getGananciaEmpate();
       elemento.Visitante.textContent = partido.getGananciaEquipo2();
   });
-}
-
-//motodo para generar numeros randoms entre un min y un max
-function metodoRandom(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 //funciones para desplegar la apuesta en un 
@@ -534,27 +512,6 @@ function encontrarNumPartido(local, visitante){
   }
 }
 
-function elegirResultadoRandomSegunGanancia(local, visitante, empatan, ganancia1, ganancia2, gananciaE){
-  let probLocal = 1 / ganancia1;
-  let probVisitante = 1 / ganancia2;
-  let probEmpatan = 1 / gananciaE;
-
-  const probTotal = probLocal + probVisitante + probEmpatan;
-
-  const probLocalMenor1 = probLocal / probTotal;
-  const probVisitanteMenor1 = probVisitante / probTotal;
-  const probEmpatanMenor1 = probEmpatan / probTotal;
-
-  let num = Math.random();
-
-  if(num < probLocalMenor1){
-    return local;
-  }else if(num < probLocalMenor1 + probEmpatanMenor1){
-    return empatan;
-  }else{
-    return visitante;
-  }
-}
 
 //funcion hecha para resaltar si una apuesta ya fue agregada a la columna de apuestas
 function resaltar(resalte) {
