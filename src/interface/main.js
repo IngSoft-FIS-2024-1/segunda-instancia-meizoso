@@ -333,7 +333,8 @@ function crearApuesta(local, visitante, fecha) {
       const apuestaNueva = new Apuesta();
       const montoUsuario = parseFloat(document.querySelector("#monto").value);
       const montoApuesta = parseFloat(monto.value);
-      if (!isNaN(montoApuesta)) {
+      // agregue la verificacion para que el monto solo admita positivos.
+      if (!isNaN(montoApuesta) && montoApuesta >= 0) {
         if (montoApuesta <= montoUsuario) {
           if (lista1.checked || lista2.checked || lista3.checked) {
             apuestaNueva.setCantApuesta(monto.value);
@@ -488,7 +489,7 @@ function crearApuesta(local, visitante, fecha) {
           resaltar2(resalt);
         }
       } else {
-        alert("monto debe ser numerico");
+        alert("el monto debe ser un numero positivo");
       }
     });
 
