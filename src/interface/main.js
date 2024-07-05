@@ -289,7 +289,7 @@ function crearApuesta(local, visitante, fecha) {
     boton.classList.add("botonListado")
     let botonBorrar = document.createElement("input");
     botonBorrar.type = "button";
-    botonBorrar.value = "borrar";
+    botonBorrar.value = "cerrar";
     botonBorrar.classList.add("botonBorrar");
     divApuesta.appendChild(boton);
     divApuesta.appendChild(botonBorrar);
