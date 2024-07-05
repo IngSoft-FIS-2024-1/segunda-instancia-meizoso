@@ -95,15 +95,19 @@ function agregarMontoaInput(){
   let monto = 50;
   const inputMonto = document.getElementById("monto");
   const montoModal = document.getElementById("montoInput").value;
-
-  if (montoModal <= 3){
-    alert("Ingresa un monto superior a 3 dolares");
-  }else if(montoModal > 200){
-    alert("Ingresa un monto inferior a 200 dolares");
+  if(!isNaN(montoModal) && montoModal.toString().indexOf('e') != 1){
+    if (montoModal <= 3){
+      alert("Ingresa un monto superior a 3 dolares");
+    }else if(montoModal > 200){
+      alert("Ingresa un monto inferior a 200 dolares");
+    }
+    else{
+      inputMonto.value = montoModal;
+      ocultarIngresoMonto();
+    }
   }
   else{
-    inputMonto.value = montoModal;
-    ocultarIngresoMonto();
+    alert('El monto debe ser numérico')
   }
 }
 
