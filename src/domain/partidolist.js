@@ -351,4 +351,29 @@ export class PartidoList {
         this.metodoRandomConComa(1.7, 2.0));
     this.#partidos.push(partido25);
   }
+  elegirResultadoRandomSegunGanancia(local, visitante, empatan, ganancia1, ganancia2, gananciaE){
+    let probLocal = 1 / ganancia1;
+    let probVisitante = 1 / ganancia2;
+    let probEmpatan = 1 / gananciaE;
+  
+    const probTotal = probLocal + probVisitante + probEmpatan;
+  
+    const probLocalMenor1 = probLocal / probTotal;
+    const probVisitanteMenor1 = probVisitante / probTotal;
+    const probEmpatanMenor1 = probEmpatan / probTotal;
+  
+    let num = Math.random();
+  
+    if(num < probLocalMenor1){
+      return local;
+    }else if(num < probLocalMenor1 + probEmpatanMenor1){
+      return empatan;
+    }else{
+      return visitante;
+    }
+  }
+  metodoRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  
 }

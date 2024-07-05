@@ -1,6 +1,7 @@
 import { PartidoList } from "../domain/partidolist.js";
 import { Apuesta } from "../domain/apuesta.js";
 import { ApuestaList } from "../domain/apuestalist.js";
+
 const partidoList = new PartidoList();
 const listaPartidos = partidoList.getlistaPartidos();
 const apuestaList = new ApuestaList();
@@ -88,6 +89,22 @@ function mostrarIngresoMonto(){
     keyboard: false
   });
   ingresoMonto.show();
+}
+
+function agregarMontoaInput(){
+  let monto = 50;
+  const inputMonto = document.getElementById("monto");
+  const montoModal = document.getElementById("montoInput").value;
+
+  if (montoModal <= 3){
+    alert("Ingresa un monto superior a 3 dolares");
+  }else if(montoModal > 200){
+    alert("Ingresa un monto inferior a 200 dolares");
+  }
+  else{
+    inputMonto.value = montoModal;
+    ocultarIngresoMonto();
+  }
 }
 
 function ocultarIngresoMonto() {
@@ -338,23 +355,23 @@ function crearApuesta(local, visitante, fecha) {
               apuestaNueva.setPorcentaje(partidoSeleccionado.getGananciaEmpate());
             }
 
-            const res = elegirResultadoRandomSegunGanancia(local, visitante, empatan, partidoSeleccionado.getGananciaEquipo1(), partidoSeleccionado.getGananciaEquipo2(), partidoSeleccionado.getGananciaEmpate());
+            const res = partidoList.elegirResultadoRandomSegunGanancia(local, visitante, empatan, partidoSeleccionado.getGananciaEquipo1(), partidoSeleccionado.getGananciaEquipo2(), partidoSeleccionado.getGananciaEmpate());
 
             if (res == partidoSeleccionado.getEquipo1()) {
               apuestaNueva.setEquipoGanador(partidoSeleccionado.getEquipo1());
               while (partidoSeleccionado.getGolesEquipo1() <= partidoSeleccionado.getGolesEquipo2()) {
-                partidoSeleccionado.setGolesEquipo1(metodoRandom(0, 4));
-                partidoSeleccionado.setGolesEquipo2(metodoRandom(0, 4));
+                partidoSeleccionado.setGolesEquipo1(partidoList.metodoRandom(0, 4));
+                partidoSeleccionado.setGolesEquipo2(partidoList.metodoRandom(0, 4));
               }
             } else if (res == partidoSeleccionado.getEquipo2()) {
               apuestaNueva.setEquipoGanador(partidoSeleccionado.getEquipo2());
               while (partidoSeleccionado.getGolesEquipo2() <= partidoSeleccionado.getGolesEquipo1()) {
-                partidoSeleccionado.setGolesEquipo1(metodoRandom(0, 4));
-                partidoSeleccionado.setGolesEquipo2(metodoRandom(0, 4));
+                partidoSeleccionado.setGolesEquipo1(partidoList.metodoRandom(0, 4));
+                partidoSeleccionado.setGolesEquipo2(partidoList.metodoRandom(0, 4));
               }
             } else {
               apuestaNueva.setEquipoGanador("empatan");
-              let numRandom = metodoRandom(0, 5);
+              let numRandom = partidoList.metodoRandom(0, 5);
               partidoSeleccionado.setGolesEquipo1(numRandom);
               partidoSeleccionado.setGolesEquipo2(numRandom);
             }

@@ -110,4 +110,5 @@ export class Apuesta {
   // setCantGolesEquipo2(cantGolesEquipo2) {
   // this.#cantGolesEquipo2 = cantGolesEquipo2;
   // }
+  
 }
