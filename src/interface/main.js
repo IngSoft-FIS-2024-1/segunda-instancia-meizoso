@@ -203,104 +203,111 @@ function crearApuesta(local, visitante, fecha) {
     alert("no puede crear mas apuestas");
   }
   else if (!listadoApuestas.includes(titulo.textContent)) {
-    let listado = document.querySelector("#nuevaApuesta");
-    let divApuesta = document.createElement("div");
-    listado.appendChild(divApuesta);
     apuestasVigentes++;
-    divApuesta.classList.add("nuevaApuesta" + apuestasVigentes);
-    divApuesta.setAttribute("id", local + visitante + fecha)
-    titulo.classList.add("tituloListado");
-    divApuesta.appendChild(titulo);
-
+    let listado = document.querySelector("#nuevaApuesta");
+    listadoApuestas.push(titulo.textContent);
+    let divApuesta = document.createElement("div");
+    divApuesta.classList.add("nuevaApuesta"+apuestasVigentes); // Add unique class for styling
+    divApuesta.classList.add("nuevaApuesta"); // Add common class for styling
+    // Setting unique id for divApuesta based on local, visitante, and fecha
+    divApuesta.setAttribute("id", local + visitante + fecha);
+    
+    // Creating and appending titulo
+    divApuesta.append(titulo)
+    
+    // Creating and appending fecha
     let data = document.createElement("h6");
-    data.textContent = fecha;
-    data.classList.add("fechaListado")
+    data.textContent = fecha; // Assuming fecha is defined somewhere
+    data.classList.add("fechaListado", "mb-3"); // Example Bootstrap margin bottom class
     divApuesta.appendChild(data);
-
+    
+    // Creating and appending monto input
     let monto = document.createElement("input");
-    monto.classList.add("montoListado")
+    monto.classList.add("form-control", "montoListado");
     monto.placeholder = "$0000";
-
+    divApuesta.appendChild(monto);
+    
+    // Creating and appending label for monto input
     let pApuestaListado = document.createElement("label");
     pApuestaListado.textContent = "Coloque su Apuesta:";
-    pApuestaListado.classList.add("pApuestaListado");
-    const unicoId = 'montoId';
-    monto.id = unicoId;
-    pApuestaListado.htmlFor = unicoId;
-
+    pApuestaListado.classList.add("pApuestaListado", "mb-3"); // Example Bootstrap margin bottom class
+    divApuesta.appendChild(pApuestaListado);
+    
+    // Creating and appending div for monto input and label
     let divMonto = document.createElement("div");
+    divMonto.classList.add("form-group", "mb-3"); // Example Bootstrap margin bottom class
     divMonto.appendChild(pApuestaListado);
     divMonto.appendChild(monto);
-    divMonto.classList.add("divMonto");
     divApuesta.appendChild(divMonto);
-
+    
+    // Creating and appending eleccion
     let eleccion = document.createElement("h6");
-    eleccion.classList.add("eleccionListado");
     eleccion.textContent = "Seleccione Resultado";
+    eleccion.classList.add("eleccionListado", "mb-3"); // Example Bootstrap margin bottom class
     divApuesta.appendChild(eleccion);
-
-    let lista1 = document.createElement("input");
-    lista1.classList.add("lista1Listado")
-    lista1.type = "checkbox";
-
-    let equipo1 = document.createElement("label");
-    equipo1.textContent = "Gana " + local
-    equipo1.classList.add("localListado")
-    let unicoIdLocal = "idLocal";
-    lista1.id = unicoIdLocal;
-    equipo1.htmlFor = unicoIdLocal;
-
-    let lista2 = document.createElement("input");
-    lista2.classList.add("lista2Listado")
-    lista2.type = "checkbox";
-
-    let equipo2 = document.createElement("label");
-    equipo2.textContent = "Gana " + visitante
-    equipo2.classList.add("visitanteListado")
-    let unicoIdvisitante = "idVisitante";
-    lista2.id = unicoIdvisitante;
-    equipo2.htmlFor = unicoIdvisitante;
-
-    let lista3 = document.createElement("input");
-    lista3.classList.add("lista3Listado")
-    lista3.type = "checkbox";
-
-    let equipo3 = document.createElement("label");
-    equipo3.textContent = "Empatan"
-    equipo3.classList.add("empateListado");
-    let unicoIdEmpate = "idEmpate";
-    lista3.id = unicoIdEmpate;
-    equipo3.htmlFor = unicoIdEmpate;
-
-    let divBoton1 = document.createElement("div");
-    divBoton1.classList.add("divBoton1");
-    let divBoton2 = document.createElement("div");
-    divBoton2.classList.add("divBoton2");
-    let divBoton3 = document.createElement("div");
-    divBoton3.classList.add("divBoton3");
-    divBoton1.appendChild(equipo1);
-    divBoton1.appendChild(lista1);
-    divApuesta.appendChild(divBoton1);
-    divBoton2.appendChild(equipo2);
-    divBoton2.appendChild(lista2);
-    divApuesta.appendChild(divBoton2);
-    divBoton3.appendChild(equipo3);
-    divBoton3.appendChild(lista3);
-    divApuesta.appendChild(divBoton3);
-    let boton = document.createElement("input");
-    boton.type = "button"
-    boton.value = "Hecho"
-    boton.classList.add("botonListado")
-    let botonBorrar = document.createElement("input");
+    
+    // Creating and appending checkboxes and labels
+    function createCheckboxAndLabel(id, labelText, checkboxClass, labelClass) {
+        let checkbox = document.createElement("input");
+        checkbox.classList.add("form-check-input", checkboxClass);
+        checkbox.type = "checkbox";
+        checkbox.id = id;
+    
+        let label = document.createElement("label");
+        label.textContent = labelText;
+        label.classList.add("form-check-label", labelClass);
+        label.htmlFor = id;
+    
+        return { checkbox, label };
+    }
+    
+    let { checkbox: lista1, label: equipo1 } = createCheckboxAndLabel("idLocal", "Gana " + local, "lista1Listado", "localListado");
+    let { checkbox: lista2, label: equipo2 } = createCheckboxAndLabel("idVisitante", "Gana " + visitante, "lista2Listado", "visitanteListado");
+    let { checkbox: lista3, label: equipo3 } = createCheckboxAndLabel("idEmpate", "Empatan", "lista3Listado", "empateListado");
+    
+    let divCheckboxes = document.createElement("div");
+    divCheckboxes.classList.add("form-check", "mb-3"); // Example Bootstrap margin bottom class
+    divCheckboxes.appendChild(equipo1);
+    divCheckboxes.appendChild(lista1);
+    divApuesta.appendChild(divCheckboxes);
+    
+    divCheckboxes = document.createElement("div");
+    divCheckboxes.classList.add("form-check", "mb-3"); // Example Bootstrap margin bottom class
+    divCheckboxes.appendChild(equipo2);
+    divCheckboxes.appendChild(lista2);
+    divApuesta.appendChild(divCheckboxes);
+    
+    divCheckboxes = document.createElement("div");
+    divCheckboxes.classList.add("form-check", "mb-3"); // Example Bootstrap margin bottom class
+    divCheckboxes.appendChild(equipo3);
+    divCheckboxes.appendChild(lista3);
+    divApuesta.appendChild(divCheckboxes);
+    
+    // Creating and appending buttons within a row and columns structure
+    let divRow = document.createElement("div");
+    divRow.classList.add("row", "mb-3");
+    
+    let divCol = document.createElement("div");
+    divCol.classList.add("col");
+    
+    let boton = document.createElement("button");
+    boton.type = "button";
+    boton.textContent = "Hecho";
+    boton.classList.add("btn", "btn-primary", "mr-2", "botonListado"); // Example Bootstrap classes for button
+    divCol.appendChild(boton);
+    
+    let botonBorrar = document.createElement("button");
     botonBorrar.type = "button";
-    botonBorrar.value = "Cerrar";
-    botonBorrar.classList.add("botonBorrar");
-    divApuesta.appendChild(boton);
-    divApuesta.appendChild(botonBorrar);
-    listadoApuestas.push(titulo.textContent);
-    listadoApuestas.push(apuestasVigentes);
+    botonBorrar.textContent = "Cerrar";
+    botonBorrar.classList.add("btn", "btn-secondary", "botonBorrar"); // Example Bootstrap classes for button
+    divCol.appendChild(botonBorrar);
+    
+    divRow.appendChild(divCol);
+    divApuesta.appendChild(divRow);
+    
+    // Adding divApuesta to listado
     listado.appendChild(divApuesta);
-
+    
     //parte para borrar una apuesta que fue agregada
     botonBorrar.addEventListener("click", function () {
       listado.removeChild(divApuesta);
@@ -342,7 +349,6 @@ function crearApuesta(local, visitante, fecha) {
         if (montoApuesta <= montoUsuario) {
           if (lista1.checked || lista2.checked || lista3.checked) {
             apuestaNueva.setCantApuesta(monto.value);
-g
             let indice = encontrarNumPartido(local, visitante);
             apuestaNueva.setPartido(listaPartidos[indice - 1]);
 
