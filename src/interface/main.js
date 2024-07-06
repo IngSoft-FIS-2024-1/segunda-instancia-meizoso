@@ -207,46 +207,36 @@ function crearApuesta(local, visitante, fecha) {
     let listado = document.querySelector("#nuevaApuesta");
     listadoApuestas.push(titulo.textContent);
     let divApuesta = document.createElement("div");
-    divApuesta.classList.add("nuevaApuesta"+apuestasVigentes); // Add unique class for styling
-    divApuesta.classList.add("nuevaApuesta"); // Add common class for styling
-    // Setting unique id for divApuesta based on local, visitante, and fecha
+    divApuesta.classList.add("nuevaApuesta"+apuestasVigentes); 
+    divApuesta.classList.add("nuevaApuesta"); 
     divApuesta.setAttribute("id", local + visitante + fecha);
-    
-    // Creating and appending titulo
     divApuesta.append(titulo)
-    
-    // Creating and appending fecha
     let data = document.createElement("h6");
-    data.textContent = fecha; // Assuming fecha is defined somewhere
-    data.classList.add("fechaListado", "mb-3"); // Example Bootstrap margin bottom class
+    data.textContent = fecha;
+    data.classList.add("fechaListado", "mb-3"); 
     divApuesta.appendChild(data);
-    
-    // Creating and appending monto input
     let monto = document.createElement("input");
     monto.classList.add("form-control", "montoListado");
     monto.placeholder = "$0000";
     divApuesta.appendChild(monto);
     
-    // Creating and appending label for monto input
     let pApuestaListado = document.createElement("label");
     pApuestaListado.textContent = "Coloque su Apuesta:";
-    pApuestaListado.classList.add("pApuestaListado", "mb-3"); // Example Bootstrap margin bottom class
+    pApuestaListado.classList.add("pApuestaListado", "mb-3");
     divApuesta.appendChild(pApuestaListado);
     
-    // Creating and appending div for monto input and label
     let divMonto = document.createElement("div");
-    divMonto.classList.add("form-group", "mb-3"); // Example Bootstrap margin bottom class
+    divMonto.classList.add("form-group", "mb-3"); 
     divMonto.appendChild(pApuestaListado);
     divMonto.appendChild(monto);
     divApuesta.appendChild(divMonto);
     
-    // Creating and appending eleccion
     let eleccion = document.createElement("h6");
     eleccion.textContent = "Seleccione Resultado";
-    eleccion.classList.add("eleccionListado", "mb-3"); // Example Bootstrap margin bottom class
+    eleccion.classList.add("eleccionListado", "mb-3"); 
     divApuesta.appendChild(eleccion);
     
-    // Creating and appending checkboxes and labels
+
     function createCheckboxAndLabel(id, labelText, checkboxClass, labelClass) {
         let checkbox = document.createElement("input");
         checkbox.classList.add("form-check-input", checkboxClass);
@@ -266,24 +256,23 @@ function crearApuesta(local, visitante, fecha) {
     let { checkbox: lista3, label: equipo3 } = createCheckboxAndLabel("idEmpate", "Empatan", "lista3Listado", "empateListado");
     
     let divCheckboxes = document.createElement("div");
-    divCheckboxes.classList.add("form-check", "mb-3"); // Example Bootstrap margin bottom class
+    divCheckboxes.classList.add("form-check", "mb-3"); 
     divCheckboxes.appendChild(equipo1);
     divCheckboxes.appendChild(lista1);
     divApuesta.appendChild(divCheckboxes);
     
     divCheckboxes = document.createElement("div");
-    divCheckboxes.classList.add("form-check", "mb-3"); // Example Bootstrap margin bottom class
+    divCheckboxes.classList.add("form-check", "mb-3"); 
     divCheckboxes.appendChild(equipo2);
     divCheckboxes.appendChild(lista2);
     divApuesta.appendChild(divCheckboxes);
     
     divCheckboxes = document.createElement("div");
-    divCheckboxes.classList.add("form-check", "mb-3"); // Example Bootstrap margin bottom class
+    divCheckboxes.classList.add("form-check", "mb-3"); 
     divCheckboxes.appendChild(equipo3);
     divCheckboxes.appendChild(lista3);
     divApuesta.appendChild(divCheckboxes);
     
-    // Creating and appending buttons within a row and columns structure
     let divRow = document.createElement("div");
     divRow.classList.add("row", "mb-3");
     
@@ -293,22 +282,20 @@ function crearApuesta(local, visitante, fecha) {
     let boton = document.createElement("button");
     boton.type = "button";
     boton.textContent = "Hecho";
-    boton.classList.add("btn", "btn-primary", "mr-2", "botonListado"); // Example Bootstrap classes for button
+    boton.classList.add("btn", "btn-primary", "mr-2", "botonListado"); 
     divCol.appendChild(boton);
     
     let botonBorrar = document.createElement("button");
     botonBorrar.type = "button";
     botonBorrar.textContent = "Cerrar";
-    botonBorrar.classList.add("btn", "btn-secondary", "botonBorrar"); // Example Bootstrap classes for button
+    botonBorrar.classList.add("btn", "btn-secondary", "botonBorrar"); 
     divCol.appendChild(botonBorrar);
     
     divRow.appendChild(divCol);
     divApuesta.appendChild(divRow);
     
-    // Adding divApuesta to listado
     listado.appendChild(divApuesta);
     
-    //parte para borrar una apuesta que fue agregada
     botonBorrar.addEventListener("click", function () {
       listado.removeChild(divApuesta);
       apuestasVigentes--;
