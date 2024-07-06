@@ -296,6 +296,7 @@ function crearApuesta(local, visitante, fecha) {
     
     listado.appendChild(divApuesta);
     
+
     botonBorrar.addEventListener("click", function () {
       listado.removeChild(divApuesta);
       apuestasVigentes--;
