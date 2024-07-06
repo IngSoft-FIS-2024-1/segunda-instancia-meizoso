@@ -33,7 +33,7 @@ let apuestasGanadas = [];
 //fuincion de inicio que se ejecuta al principio de toda la pagina
 function inicio() {
   mostrar(document.querySelector(".seccionMenu"));
-  esconder(document.querySelector(".nuevaApuesta"));
+  esconder(document.querySelector("#nuevaApuesta"));
   esconder(document.querySelector(".apuestas"));
   esconder(document.querySelector(".seccionNoticias"));
   esconder(document.querySelector(".seccionHistorial"));
@@ -203,7 +203,7 @@ function crearApuesta(local, visitante, fecha) {
     alert("no puede crear mas apuestas");
   }
   else if (!listadoApuestas.includes(titulo.textContent)) {
-    let listado = document.querySelector(".nuevaApuesta");
+    let listado = document.querySelector("#nuevaApuesta");
     let divApuesta = document.createElement("div");
     listado.appendChild(divApuesta);
     apuestasVigentes++;
@@ -342,7 +342,7 @@ function crearApuesta(local, visitante, fecha) {
         if (montoApuesta <= montoUsuario) {
           if (lista1.checked || lista2.checked || lista3.checked) {
             apuestaNueva.setCantApuesta(monto.value);
-
+g
             let indice = encontrarNumPartido(local, visitante);
             apuestaNueva.setPartido(listaPartidos[indice - 1]);
 
@@ -513,12 +513,12 @@ function crearApuesta(local, visitante, fecha) {
         listaApuestas = listaApuestas.filter(a => a !== apuesta);
       }
     });
-    document.querySelector(".nuevaApuesta").style.display = "block";
+    document.querySelector("#nuevaApuesta").style.display = "block";
   }
   else {
     for (let apuesta = 0; apuesta < listadoApuestas.length; apuesta += 2) {
       if (listadoApuestas[apuesta] == titulo.textContent) {
-        let resalte = document.querySelector(".nuevaApuesta" + listadoApuestas[apuesta + 1]);
+        let resalte = document.querySelector("#nuevaApuesta" + listadoApuestas[apuesta + 1]);
         resaltar(resalte);
         break;
       }

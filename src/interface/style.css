@@ -164,6 +164,26 @@ a {
     border-right:0px;
 }
 
+.noticia {
+    width:40vw;
+    height:10vw;
+    margin:1vw;
+    background-size:100%;
+    background-position: center;
+  }
+  .titulo {
+    color: #ffffff;
+    background:rgba(0, 0, 0, 0.7);
+    margin:1vw 10vw 1vw 1vw;
+    padding:0;
+
+  }
+  .desc {
+    color: #dbdbdb;
+    background:rgba(0, 0, 0, 0.7);
+    padding-left:0;
+    margin:1vw 10vw 1vw 1vw;
+  }
 .nuevaApuesta1,
 .nuevaApuesta2,
 .nuevaApuesta3
@@ -308,20 +328,6 @@ a {
     margin-right: 2vw;
 }
 
-.noticia {
-    background-color: rgba(235, 243, 255, 0.836);
-    margin-left: 13vw;
-    margin-right: 13vw;
-    background-color:rgb(255, 240, 212);
-    background-repeat: no-repeat;
-    background-size:1000px;
-    background-position: left;
-    text-decoration: none;
-    display: inline-block;
-    display:flex;
-    justify-content: left;
-    margin-top:2.5vw;
-}
 #noticia1{
     background-image: url(img/noticia1.avif);
     border-style: solid;
@@ -337,27 +343,10 @@ a {
 #noticia4{
     background-image: url(img/noticia4.avif);
     border-style:solid;
-    margin-bottom: 3vw;
 }
 #noticia5{
     background-image: url(img/noticia5.webp);
     border-style:solid;
-    margin-bottom: 3vw;
-}
-.titulo {
-    font-size: 22px;
-    color:sienna;
-}
-
-.desc{
-    color:rgb(0, 0, 0);
-}
-.contenidoNoticia{
-    padding:0.5vw;
-    margin-left:52.5vw;
-    display:inline-block;
-    /* css para logo, deberia estar al nivel de la navbar 
-    (eso arreglaria el problema de que no este pegada a la parte de arriba de la pagina*/
 }
 
 html {

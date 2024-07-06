@@ -120,7 +120,7 @@
           </footer>
         </article>
       </section>
-      <div class = "nuevaApuesta">  
+      <div class ="container mt-4"  id ="nuevaApuesta">  
       </div>
   </section>
 
@@ -128,61 +128,65 @@
     
   </section>
 
-  <section class="seccionNoticias" id="seccionNoticias">
-    <article class="noticia" id = "noticia1">
-      <a href="https://elpais.com/deportes/baloncesto/2024-04-17/la-nba-sanciona-de-por-vida-al-jugador-jontay-porter-por-hacer-trampas-con-las-apuestas.html"
-        target="_blank" class ="contenidoNoticia">
-        <!-- id para los titulos -->
-        <h5 class = "titulo" id="linea">NBA sanciona de por vida al jugador Jontay Porter por hacer trampas con las
-          apuestas
-        </h5>
-        <!-- id para las descripciones de las noticias (usar el mismo id para otras noticias)-->
-        <p class = "desc" id="linea"> La liga ha compartido información con los fiscales federales por si emprenden
-          acciones por la vía penal.
-        </p>
-      </a>
-    </article>
-
-    <article class = "noticia" id = "noticia2" >
-      <a href="https://www.elpais.com.uy/ovacion/futbol/tres-hinchas-del-valencia-fueron-conden"
-       target ="_blank" class= "contenidoNoticia">
-        <h5 class = "titulo" id="linea">Tres hinchas del Valencia fueron condenados a ocho meses de cárcel por insultos racistas a Vinícius Júnior
-        </h5>
-        <p class = "desc" id = "linea"> Tras la denuncia por lo ocurrido aquel 21 de mayo de 2023 durante el Valencia vs. Real Madrid, se les impuso esta pena a los parciales, que pidieron la suspensión de la pena de prisión y están a la espera de la confirmación de la jueza.
-        </p>
-      </a>
-    </article> 
-
-    <article class = "noticia" id = "noticia3" >
-      <a href="https://www.marca.com/natacion/waterpolo/2024/05/20/664b6edb22601db0218b45b1.html"
-       target ="_blank" class= "contenidoNoticia">
-        <h5 class = "titulo" id="linea">Comienzan las semifinales por los títulos de liga masculina y femenina
-        </h5>
-        <p class = "desc" id = "linea"> Se disputan a partir de este martes al mejor de tres partidos.
-        </p>
-      </a>
-    </article>
-
-    <article class = "noticia" id = "noticia4" >
-      <a href="https://www.lanacion.com.ar/deportes/es-como-una-droga-viaje-a-la-mente-de-un-tenista-tramposo-asi-funciona-el-perverso-sistema-para-nid11052024/"
-       target ="_blank" class= "contenidoNoticia">
-        <h5 class = "titulo" id="linea">“Es como una droga”Viaje a la mente de un tenista tramposo
-        </h5>
-        <p class = "desc" id = "linea"> Así funciona el perverso sistema para arreglar partidos.
-        </p>
-      </a>
-    </article>
-
-    <article class = "noticia" id = "noticia5" >
-      <a href="https://www.marca.com/futbol/real-madrid/2024/02/19/65d28546268e3ebb6e8b4575.html"
-       target ="_blank" class= "contenidoNoticia">
-        <h5 class = "titulo" id="linea">Mbappé ya ha firmado su contrato con el Real Madrid
-        </h5>
-        <p class = "desc" id = "linea"> El francés será jugador madridista y fichará por cinco temporadas.
-        </p>
-      </a>
-    </article>
-  </section>
+  <!-- aca use mas elementos de bootstrap, se pueden ver en la seccion noticias-->
+  <div class="container mt-4">
+    <section class="seccionNoticias">
+      <div class="row">
+        <div class="col-md-12">
+          <article class="noticia" id="noticia1">
+            <a href="https://elpais.com/deportes/baloncesto/2024-04-17/la-nba-sanciona-de-por-vida-al-jugador-jontay-porter-por-hacer-trampas-con-las-apuestas.html" target="_blank" class="contenidoNoticia">
+              <h5 class="titulo">NBA sanciona de por vida al jugador Jontay Porter por hacer trampas con las apuestas</h5>
+              <p class="desc">La liga ha compartido información con los fiscales federales por si emprenden acciones por la vía penal.</p>
+            </a>
+          </article>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-12">
+          <article class="noticia" id="noticia2">
+            <a href="https://www.elpais.com.uy/ovacion/futbol/tres-hinchas-del-valencia-fueron-conden" target="_blank" class="contenidoNoticia">
+              <h5 class="titulo">Tres hinchas del Valencia fueron condenados a ocho meses de cárcel por insultos racistas a Vinícius Júnior</h5>
+              <p class="desc">Tras la denuncia por lo ocurrido aquel 21 de mayo de 2023 durante el Valencia vs. Real Madrid, se les impuso esta pena a los parciales, que pidieron la suspensión de la pena de prisión y están a la espera de la confirmación de la jueza.</p>
+            </a>
+          </article>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-12">
+          <article class="noticia" id="noticia3">
+            <a href="https://www.marca.com/natacion/waterpolo/2024/05/20/664b6edb22601db0218b45b1.html" target="_blank" class="contenidoNoticia">
+              <h5 class="titulo">Comienzan las semifinales por los títulos de liga masculina y femenina</h5>
+              <p class="desc">Se disputan a partir de este martes al mejor de tres partidos.</p>
+            </a>
+          </article>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-12">
+          <article class="noticia" id="noticia4">
+            <a href="https://www.lanacion.com.ar/deportes/es-como-una-droga-viaje-a-la-mente-de-un-tenista-tramposo-asi-funciona-el-perverso-sistema-para-nid11052024/" target="_blank" class="contenidoNoticia">
+              <h5 class="titulo">“Es como una droga”Viaje a la mente de un tenista tramposo</h5>
+              <p class="desc">Así funciona el perverso sistema para arreglar partidos.</p>
+            </a>
+          </article>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-12">
+          <article class="noticia" id="noticia5">
+            <a href="https://www.marca.com/futbol/real-madrid/2024/02/19/65d28546268e3ebb6e8b4575.html" target="_blank" class="contenidoNoticia">
+              <h5 class="titulo">Mbappé ya ha firmado su contrato con el Real Madrid</h5>
+              <p class="desc">El francés será jugador madridista y fichará por cinco temporadas.</p>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
   <section class="seccionMenu" id ="seccionMenu">
     <div class="botonesMenu">
       <h5 id="idMenu">Menú</h5>
