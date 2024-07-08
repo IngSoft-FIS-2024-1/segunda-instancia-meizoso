@@ -1,7 +1,7 @@
 # Solucion de issues.  
 ## issues de baja implicancia.  
   
-    Comencé leyendo todos los issues donde se documentaban problemas sobre el código y clasificandolos por importancia.   
+Comencé leyendo todos los issues donde se documentaban problemas sobre el código y clasificandolos por importancia.   
 Empecé atacando aquellos issues que no tenian una gran implicancia en el código sino más bien en la interfaz,   
 tales como respetar el title case, solucionar errores ortográficos y mejor elección de palabras.   
 Luego me movì a aquellos de baja implicancia en el código (issues #7 , #8). Para ellos realicé cambios menores,  
@@ -15,11 +15,11 @@ También solucioné el error de que se podian crear apuestas con un valor negati
   
 ## issues de alta implicancia.  
   
-    queda solucionar el bug de que las cartas de nueva apuesta se queden en el navbar.  
+queda solucionar el bug de que las cartas de nueva apuesta se queden en el navbar.  
 
 # Agregar elementos bootstrap.  
   
-    El obligatorio carecía de elementos bootstrap, fue minimo el uso de la herramienta, por ende implementé distintas secciones   
+El obligatorio carecía de elementos bootstrap, fue minimo el uso de la herramienta, por ende implementé distintas secciones   
 de la página usando bootsrap, para empezar, modifiqué la sección de noticias, ya que esta no tiene ninguna función en javaScript   
 y esto facilita el cambiar la estructura del html y las clases.  
 Con el uso de row y col, logré conseguir una mejor estética de la sección, creando eficientementelos contenedores de noticias  
