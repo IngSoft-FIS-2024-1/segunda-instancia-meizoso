@@ -25,10 +25,18 @@ y esto facilita el cambiar la estructura del html y las clases.
 Con el uso de row y col, logré conseguir una mejor estética de la sección, creando eficientementelos contenedores de noticias  
 uno encima de otro. Este primer paso ya solucionó el problema de la falta de responsividad de la página, ahora cuando  
 el tamaño de la ventana cambia, los elementos cambian sus propiedades respectivamente.  
+  
 Posteriormente, me moví a la sección de nuevaApuesta, esta es donde se crean una especie de "cartas" pequeñas donde el usuario  
 ingresa el monto de apuesta y la información correspondiente. Ésta sección significó mayores problemas debido a que los  
 elementos de html son creados en javaScript, y el manejo de clases fue un poco confuso, sin embargo, aplicando la misma  
 estructura de filas y columnas logré implementar estos elementos con bootstrap, ahora se puede agrandar y achicar la ventana  
 sin tener problemas mayores.  
 
+## Calculos fuera de interfaz.  
+  
+En el trabajo original, habiamos hecho los cálculos en main, esto implica que las funciones donde se conseguían valores para el  
+funcionamiento de la página estaban en el mismo lugar donde se encontraban las funciones para mostrar elementos visualmente.  
+Como buena práctica, removì esas funciones y las llevé a las clases correspondientes en el dominio, por ejemplo,  
+ahora la funciòn de elegir resultado se encuentra dentro de partidoList, esto es "más correcto" debido a que si queremos saber  
+quén gano un partido, intuitivamente iremos a donde se encuentran los partidos, no a la interfaz.  
 
