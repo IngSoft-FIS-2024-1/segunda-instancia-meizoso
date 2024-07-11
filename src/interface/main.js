@@ -214,7 +214,7 @@ function crearApuesta(local, visitante, fecha) {
     divApuesta.append(titulo)
     let data = document.createElement("h6");
     data.textContent = fecha;
-    data.classList.add("fechaListado", "mb-3"); 
+    data.classList.add("fechaListado", "mb-1"); 
     divApuesta.appendChild(data);
     let monto = document.createElement("input");
     monto.classList.add("form-control", "montoListado");
@@ -223,18 +223,18 @@ function crearApuesta(local, visitante, fecha) {
     
     let pApuestaListado = document.createElement("label");
     pApuestaListado.textContent = "Coloque su Apuesta:";
-    pApuestaListado.classList.add("pApuestaListado", "mb-3");
+    pApuestaListado.classList.add("pApuestaListado", "mb-2");
     divApuesta.appendChild(pApuestaListado);
     
     let divMonto = document.createElement("div");
-    divMonto.classList.add("form-group", "mb-3"); 
+    divMonto.classList.add("form-group", "m-0"); 
     divMonto.appendChild(pApuestaListado);
     divMonto.appendChild(monto);
     divApuesta.appendChild(divMonto);
     
     let eleccion = document.createElement("h6");
     eleccion.textContent = "Seleccione Resultado";
-    eleccion.classList.add("eleccionListado", "mb-3"); 
+    eleccion.classList.add("eleccionListado", "mb-4"); 
     divApuesta.appendChild(eleccion);
     
     //funcion para crear los input, explicado abajo
@@ -246,7 +246,7 @@ function crearApuesta(local, visitante, fecha) {
     
         let label = document.createElement("label");
         label.textContent = labelTexto;
-        label.classList.add("form-check-label", claseLabel);
+        label.classList.add("form-check-label","mt-0" ,claseLabel);
         //esto es para que no tenga que tocar estrictamente la checkbox que es chiquita.
         label.htmlFor = id
         return { checkbox, label };
@@ -288,7 +288,7 @@ function crearApuesta(local, visitante, fecha) {
     let botonBorrar = document.createElement("button");
     botonBorrar.type = "button";
     botonBorrar.textContent = "Cerrar";
-    botonBorrar.classList.add("btn", "btn-secondary", "botonBorrar"); 
+    botonBorrar.classList.add("btn", "btn-secondary", "botonBorrar", "ms-3"); 
     divCol.appendChild(botonBorrar);
     
     divRow.appendChild(divCol);
