@@ -413,61 +413,54 @@ function crearApuesta(local, visitante, fecha) {
             let historial = document.querySelector(".seccionHistorial");
             let numLista = 0;
             listaApuestas.forEach((a, index) => {
-              if (!a.getMostrada()) {
-                let listaHistorial = document.createElement("article");
-                let fechaHistorial = document.createElement("p");
-                fechaHistorial.textContent = a.getPartido().getFecha();
-                fechaHistorial.classList.add("fechaHistorial");
-                listaHistorial.appendChild(fechaHistorial);
-                historial.classList.add("listaHistorial" + numLista);
-                numLista++;
-                listaHistorial.id = "listaHistorial";
-                let tuApuesta = document.createElement("p");
-                tuApuesta.classList.add("tuApuesta");
-                tuApuesta.textContent = "Apostaste: " + a.getEquipoSeleccionado();
-                listaHistorial.appendChild(tuApuesta);
-                let aEquipo1 = document.createElement("p");
-                aEquipo1.classList.add("equipo1Historial");
-                aEquipo1.textContent = a.getPartido().getEquipo1();
-                let cantGoles1 = document.createElement("p");
-                cantGoles1.textContent = " Goles:" + a.getPartido().getGolesEquipo1();
-                aEquipo1.appendChild(cantGoles1);
-                let aEquipo2 = document.createElement("p");
-                aEquipo2.textContent = a.getPartido().getEquipo2();
-                aEquipo2.classList.add("equipo2Historial");
-                let cantGoles2 = document.createElement("p");
-                cantGoles2.textContent = " Goles:" + a.getPartido().getGolesEquipo2();
-                aEquipo2.appendChild(cantGoles2);
-                listaHistorial.appendChild(aEquipo1);
-                listaHistorial.appendChild(aEquipo2);
-                historial.appendChild(listaHistorial);
-                if (a.getEquipoGanador() == a.getEquipoSeleccionado()) {
-                  let mensajeResultado = document.createElement("p");
-                  mensajeResultado.textContent = "¡Felicidades, has ganado!";
-                  mensajeResultado.classList.add("mensajeResultado");
-                  let botonReclamar = document.createElement("input");
-                  botonReclamar.type = "button";
-                  botonReclamar.classList.add("reclamarBtn");
-                  botonReclamar.value = "Reclamar";
-                  botonReclamar.dataset.index = index;
-                  mensajeResultado.appendChild(botonReclamar);
-                  listaHistorial.appendChild(mensajeResultado);
-                  apuestasGanadas.push(a);
-                } else {
-                  let mensajeResultado = document.createElement("p");
-                  mensajeResultado.textContent = "¡Perdiste! Más suerte la próxima.";
-                  mensajeResultado.classList.add("mensajeResultado");
-                  let btnBorrarLista = document.createElement("input");
-                  btnBorrarLista.type = "button";
-                  btnBorrarLista.classList.add("reclamarBtn");
-                  btnBorrarLista.value = "Borrar";
-                  a.setPorcentaje(0);
-                  btnBorrarLista.dataset.index = index;
-                  mensajeResultado.appendChild(btnBorrarLista);
-                  listaHistorial.appendChild(mensajeResultado);
-                  historial.appendChild(listaHistorial);
+                if (!a.getMostrada()) {
+                    let listaHistorial = document.createElement("article");
+                    listaHistorial.classList.add("card", "mb-3");
+                    let carta = document.createElement("div");
+                    carta.classList.add("card-body");
+                    let fechaHistorial = document.createElement("p");
+                    fechaHistorial.textContent = a.getPartido().getFecha();
+                    fechaHistorial.classList.add("card-text", "fechaHistorial");
+                    carta.appendChild(fechaHistorial);
+                    let tuApuesta = document.createElement("p");
+                    tuApuesta.classList.add("card-text", "tuApuesta");
+                    tuApuesta.textContent = "Apostaste: " + a.getEquipoSeleccionado();
+                    carta.appendChild(tuApuesta);
+                    let aEquipo1 = document.createElement("p");
+                    aEquipo1.classList.add("card-text", "equipo1Historial");
+                    aEquipo1.textContent = a.getPartido().getEquipo1() + " Goles: " + a.getPartido().getGolesEquipo1();
+                    carta.appendChild(aEquipo1);
+                    let aEquipo2 = document.createElement("p");
+                    aEquipo2.classList.add("card-text", "equipo2Historial");
+                    aEquipo2.textContent = a.getPartido().getEquipo2() + " Goles: " + a.getPartido().getGolesEquipo2();
+                    carta.appendChild(aEquipo2);
+                    let mensajeResultado = document.createElement("p");
+                    mensajeResultado.classList.add("card-text", "mensajeResultado");
+                    if (a.getEquipoGanador() == a.getEquipoSeleccionado()) {
+                        mensajeResultado.textContent = "¡Felicidades, has ganado!";
+                        let botonReclamar = document.createElement("button");
+                        botonReclamar.type = "button";
+                        botonReclamar.classList.add("reclamarBtn");
+                        botonReclamar.textContent = "Reclamar";
+                        botonReclamar.dataset.index = index;
+                        botonReclamar.addEventListener("click", function() {
+                        });
+                        mensajeResultado.appendChild(botonReclamar);
+                    } else {
+                        mensajeResultado.textContent = "¡Perdiste! Más suerte la próxima.";
+                        let btnBorrarLista = document.createElement("button");
+                        btnBorrarLista.type = "button";
+                        btnBorrarLista.classList.add("reclamarBtn");
+                        btnBorrarLista.textContent = "Borrar";
+                        btnBorrarLista.dataset.index = index;
+                        btnBorrarLista.addEventListener("click", function() {
+                        });
+                        mensajeResultado.appendChild(btnBorrarLista);
+                    }
+                    carta.appendChild(mensajeResultado);
+                    listaHistorial.appendChild(carta);
+                    historial.appendChild(listaHistorial);
                 }
-              }
             });
             apuestaNueva.setMostrada(true);
 
@@ -500,9 +493,7 @@ function crearApuesta(local, visitante, fecha) {
         const montoUsuario = parseFloat(document.querySelector("#monto").value);
         const montoGanado = parseFloat(apuesta.getCantApuesta()) * parseFloat(apuesta.getPorcentaje());
         document.querySelector("#monto").value = (montoUsuario + montoGanado);
-
         event.target.closest("article").remove();
-
         apuestasGanadas = apuestasGanadas.filter(a => a !== apuesta);
         listaApuestas = listaApuestas.filter(a => a !== apuesta);
       }

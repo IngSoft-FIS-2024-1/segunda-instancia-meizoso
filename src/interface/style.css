@@ -401,7 +401,7 @@ html {
     margin-top:1vw; 
 }
 
-#listaHistorial{
+.card.mb-3{
     border: 2px double black;
     margin: 1vw 0vw 1vw 0vw;
     background-color:white;
