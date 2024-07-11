@@ -275,7 +275,7 @@ function crearApuesta(local, visitante, fecha) {
     
     let divRow = document.createElement("div");
     divRow.classList.add("row", "mb-3");
-    
+
     let divCol = document.createElement("div");
     divCol.classList.add("col");
     

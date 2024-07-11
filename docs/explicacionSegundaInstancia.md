@@ -35,9 +35,12 @@ elementos de html son creados en javaScript, el manejo de clases fue un poco con
 estructura de filas y columnas logré implementar estos elementos con bootstrap, ahora se puede agrandar y achicar la ventana  
 sin tener problemas mayores.  
   
-Finalmente implementé los elementos de la sección historial como elementos de bootstrap, tuve que informarme más sobre los elementos de tipo card,  
+Implementé los elementos de la sección historial como elementos de bootstrap, tuve que informarme más sobre los elementos de tipo card,  
 como resultado conseguí rapidamente conseguir la misma estructura que me costó lograr anteriormente con la diferencia que ahora es responsive  
 y eso le da una mejor cara a la página.  
+  
+Finalmente modifiqué ligeramente el menu principal donde se elige la sección a donde ir (home), ya tenia botones de bootstrap,  
+así que simplemente le agregué la estructura de filas y columnas.  
   
 ## Reflexion Bootstrap  
   
