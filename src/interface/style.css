@@ -315,6 +315,7 @@ a {
     font-size: 0.8vw;
     padding:0.1vw;
     padding-bottom:0.3vw;
+    z-index: 1000;
 }
 
 .material-symbols-outlined {
@@ -327,6 +328,7 @@ a {
 
 #idapuestas{
     position:relative;
+    z-index:999;
 }
 
 
