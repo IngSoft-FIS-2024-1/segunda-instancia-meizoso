@@ -28,11 +28,26 @@ el tamaño de la ventana cambia, los elementos cambian sus propiedades respectiv
   
 Posteriormente, me moví a la sección de nuevaApuesta, esta es donde se crean una especie de "cartas" pequeñas donde el usuario  
 ingresa el monto de apuesta y la información correspondiente. Ésta sección significó mayores problemas debido a que los  
-elementos de html son creados en javaScript, y el manejo de clases fue un poco confuso, sin embargo, aplicando la misma  
+elementos de html son creados en javaScript, el manejo de clases fue un poco confuso, sin embargo, aplicando la misma  
 estructura de filas y columnas logré implementar estos elementos con bootstrap, ahora se puede agrandar y achicar la ventana  
 sin tener problemas mayores.  
-
-## Calculos fuera de interfaz.  
+  
+Finalmente implementé los elementos de la sección historial como elementos de bootstrap, tuve que informarme más sobre los elementos de tipo card,  
+como resultado conseguí rapidamente conseguir la misma estructura que me costó lograr anteriormente con la diferencia que ahora es responsive  
+y eso le da una mejor cara a la página.  
+  
+## Reflexion Bootstrap  
+  
+Considero que de haber utilizado estos elementos en una etapa temprana del trabajo, habría reducido el tiempo de trabajo  
+y se hubiera conseguido un resultado más "prolijo", cumpliendo además con el requisito de ser responsive.  
+Aprendí muchisimo sobre las estructuras de la herramienta bootstrap y creo que serán muy utiles a futuro.  
+Desde mi punto de vista, el error que tuve fue no confiar en dar el paso a lo desconocido hasta el momento y aferrarme a css,  
+al no conocer bootstrap y ver buenos resultados utilizando css, creo que dejé de lado la oportunidad de aprender algo nuevo  
+y al final eso se vio reflejado en el trabajo, que si bien en su momento me pareció correcto y quedé contento con el resultado,   
+hoy considero que de haber confiado en aprender algo nuevo como bootstrap desde el inicio, habría conseguido mejores resultados   
+de forma más rapida ahorrandome varios problemas en el camino.  
+  
+# Calculos fuera de interfaz.  
   
 En el trabajo original, habiamos hecho los cálculos en main, esto implica que las funciones donde se conseguían valores para el  
 funcionamiento de la página estaban en el mismo lugar donde se encontraban las funciones para mostrar elementos visualmente.  
