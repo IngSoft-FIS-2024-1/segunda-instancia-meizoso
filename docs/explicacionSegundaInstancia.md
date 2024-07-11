@@ -15,8 +15,11 @@ También solucioné el error de que se podian crear apuestas con un valor negati
   
 ## issues de alta implicancia.  
   
-
-
+Este bug me trajo muchos problemas ya que la posicion de las cartas fue uno de los conflictos principales con el estilo de la web,  
+para solucionarlo, tuve la idea de hacer que la posicion de la carta sea relativa a la caja de apuestas, me referí al article que  
+engloba todas las apuestas, desde la caja principal hasta las cartas de crear apuesta y le agregué position relative.  
+De esta forma, y siendo que las apuestas nuevas tienen position absolute, ahora cuando bajo la navBar, ambas cajas bajan de igual manera.  
+  
 # Agregar elementos bootstrap.  
   
 El obligatorio carecía de elementos bootstrap, fue minimo el uso de la herramienta, por ende implementé distintas secciones   
