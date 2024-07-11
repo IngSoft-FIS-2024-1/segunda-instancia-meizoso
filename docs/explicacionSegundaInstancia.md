@@ -15,7 +15,7 @@ También solucioné el error de que se podian crear apuestas con un valor negati
   
 ## issues de alta implicancia.  
   
-queda solucionar el bug de que las cartas de nueva apuesta se queden en el navbar.  
+
 
 # Agregar elementos bootstrap.  
   
@@ -42,10 +42,13 @@ Considero que de haber utilizado estos elementos en una etapa temprana del traba
 y se hubiera conseguido un resultado más "prolijo", cumpliendo además con el requisito de ser responsive.  
 Aprendí muchisimo sobre las estructuras de la herramienta bootstrap y creo que serán muy utiles a futuro.  
 Desde mi punto de vista, el error que tuve fue no confiar en dar el paso a lo desconocido hasta el momento y aferrarme a css,  
-al no conocer bootstrap y ver buenos resultados utilizando css, creo que dejé de lado la oportunidad de aprender algo nuevo  
+al no conocer bootstrap y ver buenos resultados utilizando css, creo que dejé de lado la oportunidad de aprender algo nuevo   
 y al final eso se vio reflejado en el trabajo, que si bien en su momento me pareció correcto y quedé contento con el resultado,   
 hoy considero que de haber confiado en aprender algo nuevo como bootstrap desde el inicio, habría conseguido mejores resultados   
 de forma más rapida ahorrandome varios problemas en el camino.  
+También tuve que enfrentarme a problemas debido a cambiar los nombres de las clases y los elementos, reestructuré ciertas funciones  
+como resaltar y crearApuesta, además de modificar una buena parte del css debido a que el padding, margin y otros aspectos los implementé   
+simplemente con el html o el javascript mediante bootstrap.  
   
 # Calculos fuera de interfaz.  
   

@@ -209,7 +209,8 @@ function crearApuesta(local, visitante, fecha) {
     let divApuesta = document.createElement("div");
     divApuesta.classList.add("nuevaApuesta"+apuestasVigentes); 
     divApuesta.classList.add("nuevaApuesta"); 
-    divApuesta.setAttribute("id", local + visitante + fecha);
+    divApuesta.setAttribute("id", (local + " VS "+visitante).split(" ").join("").split(".").join(""));
+    titulo.classList.add("tituloListado")
     divApuesta.append(titulo)
     let data = document.createElement("h6");
     data.textContent = fecha;
@@ -236,25 +237,24 @@ function crearApuesta(local, visitante, fecha) {
     eleccion.classList.add("eleccionListado", "mb-3"); 
     divApuesta.appendChild(eleccion);
     
-
-    function createCheckboxAndLabel(id, labelText, checkboxClass, labelClass) {
+    //funcion para crear los input, explicado abajo
+    function crearCheckbox(id, labelTexto, clase, claseLabel) {
         let checkbox = document.createElement("input");
-        checkbox.classList.add("form-check-input", checkboxClass);
+        checkbox.classList.add("form-check-input", clase);
         checkbox.type = "checkbox";
         checkbox.id = id;
     
         let label = document.createElement("label");
-        label.textContent = labelText;
-        label.classList.add("form-check-label", labelClass);
-        label.htmlFor = id;
-    
+        label.textContent = labelTexto;
+        label.classList.add("form-check-label", claseLabel);
+        //esto es para que no tenga que tocar estrictamente la checkbox que es chiquita.
+        label.htmlFor = id
         return { checkbox, label };
     }
-    
-    let { checkbox: lista1, label: equipo1 } = createCheckboxAndLabel("idLocal", "Gana " + local, "lista1Listado", "localListado");
-    let { checkbox: lista2, label: equipo2 } = createCheckboxAndLabel("idVisitante", "Gana " + visitante, "lista2Listado", "visitanteListado");
-    let { checkbox: lista3, label: equipo3 } = createCheckboxAndLabel("idEmpate", "Empatan", "lista3Listado", "empateListado");
-    
+    //lo hice asi informandome en stackoverflock ya que de otra forma me quedaba muy largo el codigo, teniendo que crear 3 veces el mismo elemento.
+    let { checkbox: lista1, label: equipo1 } = crearCheckbox("idLocal", "Gana " + local, "lista1Listado", "localListado");
+    let { checkbox: lista2, label: equipo2 } = crearCheckbox("idVisitante", "Gana " + visitante, "lista2Listado", "visitanteListado");
+    let { checkbox: lista3, label: equipo3 } = crearCheckbox("idEmpate", "Empatan", "lista3Listado", "empateListado");
     let divCheckboxes = document.createElement("div");
     divCheckboxes.classList.add("form-check", "mb-3"); 
     divCheckboxes.appendChild(equipo1);
@@ -470,10 +470,6 @@ function crearApuesta(local, visitante, fecha) {
             if (index > -1) {
               listadoApuestas.splice(index, 2);
             }
-          } else {
-            resaltar(lista1);
-            resaltar(lista2);
-            resaltar(lista3);
           }
         } else {
           let resalt = document.querySelector("#monto");
@@ -495,15 +491,14 @@ function crearApuesta(local, visitante, fecha) {
         document.querySelector("#monto").value = (montoUsuario + montoGanado);
         event.target.closest("article").remove();
         apuestasGanadas = apuestasGanadas.filter(a => a !== apuesta);
-        listaApuestas = listaApuestas.filter(a => a !== apuesta);
       }
     });
     document.querySelector("#nuevaApuesta").style.display = "block";
   }
   else {
-    for (let apuesta = 0; apuesta < listadoApuestas.length; apuesta += 2) {
+    for (let apuesta = 0; apuesta < listadoApuestas.length; apuesta ++) {
       if (listadoApuestas[apuesta] == titulo.textContent) {
-        let resalte = document.querySelector("#nuevaApuesta" + listadoApuestas[apuesta + 1]);
+        let resalte = document.getElementById(listadoApuestas[apuesta].split(" ").join("").split(".").join(""));
         resaltar(resalte);
         break;
       }
